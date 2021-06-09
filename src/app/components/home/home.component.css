@@ -1,0 +1,138 @@
+.lista-tarefas {
+  text-align: center;
+  width: 300px;
+  max-width: 100%;
+  margin: 0 ;
+  padding: 1rem;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.text-card {
+  padding: 2rem;
+}
+
+.bh-purple {
+  background-color: #731DC4;
+}
+
+.btn-salva-tarefa{
+  width: 100%;
+  border-radius: 1rem;
+  height: 40px;
+  font-size: 1rem;
+  background-color: #731DC4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+
+.btn-tarefa {
+  width: 100%;
+  border-radius: 1rem;
+  height: 40px;
+  font-size: 0.7rem;
+  background-color: #4C156A;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-tarefa:hover {
+  background-color: #731DC4;
+  font-size: 0.8rem;
+  transition: 1s;
+}
+
+.nova-tarefa-card {
+  width: 250px;
+  max-width: 100%;
+  margin: 0 ;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.nova-tarefa-card input {
+  width: 95%;
+  height: 30px;
+  border-radius: 1rem;
+  border: none;
+  margin: 1rem 0;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  color: #4C156A;
+}
+
+.nova-tarefa-card input:focus-visible {
+  outline: none;
+}
+
+.form-centraliza {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.example-list {
+  border: solid 1px #ccc;
+  min-height: 60px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+
+.example-box {
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: move;
+  background: #731DC4;
+  color: #fcf;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.container {
+  background-color: #F7BC00;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 56px);
+}

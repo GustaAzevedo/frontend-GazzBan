@@ -1,0 +1,15 @@
+.header {
+  background-color: #731DC4;
+}
+
+.nav-text {
+  color: #fff;
+  padding-left: 1rem;
+  text-decoration: none;
+}
+
+.d-inline-block {
+  display: inline-block;
+  align-items: center;
+  align-content: center;
+}

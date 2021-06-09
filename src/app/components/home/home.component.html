@@ -1,0 +1,71 @@
+<div class=" container">
+
+  <div class="nova-tarefa-card">
+    <h2>Nova Tarefa</h2>
+    <div>
+      <button class="btn-tarefa" (click)="ativarForm()">Nova Tarefa</button>
+    </div>
+    <div *ngIf="formVisibility" class="form-centraliza mat-form-field">
+      <input class="" required type="text" placeholder="Tarefa" [(ngModel)]="tarefa.nome">
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label class="w-100">Categoria</mat-label>
+        <select matNativeControl required [(ngModel)]="tarefa.categoria">
+          <option value="escola">Escola</option>
+          <option value="faculdade">Faculdade</option>
+          <option value="trabalho">Trabalho</option>
+          <option value="projeto">Projeto</option>
+          <option value="rotina">Rotina</option>
+        </select>
+      </mat-form-field>
+      <button *ngIf="isInserir" class="btn-salva-tarefa" (click)="novaTarefa()">Inserir</button>
+      <button *ngIf="isSalvar" class="btn-salva-tarefa" (click)="atualizarTarefa()">Salvar</button>
+    </div>
+
+  </div>
+
+  <div class="lista-tarefas">
+    <h2>To do</h2>
+
+    <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList, doingList]"
+      class="example-list" (cdkDropListDropped)="drop($event)" (cdkDropListDropped)="arrived('todo')">
+      <div class="example-box" *ngFor="let item of todo" cdkDrag cdkDragEntered (cdkDragEntered)="came(item)">
+        <div class="text-card" *ngIf="item.estado == '1'">
+          {{item.nome}}
+          <button (click)="retornaTarefa(item)">Atualizar</button>
+          <button (click)="deleted(item.id)">Deletar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lista-tarefas">
+    <h2>Doing</h2>
+
+    <div cdkDropList #doingList="cdkDropList" [cdkDropListData]="doing" [cdkDropListConnectedTo]="[todoList, doneList]"
+      class="example-list" (cdkDropListDropped)="drop($event)" (cdkDropListDropped)="arrived('doing')">
+      <div class="example-box" *ngFor="let item of todo" cdkDrag cdkDragEntered (cdkDragEntered)="came(item)">
+        <div class="text-card" *ngIf="item.estado == '2'">
+          {{item.nome}}
+          <button (click)="retornaTarefa(item)">Atualizar</button>
+          <button (click)="deleted(item.id)">Deletar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="lista-tarefas">
+    <h2>Done</h2>
+
+    <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList, doingList]"
+      class="example-list" (cdkDropListDropped)="drop($event)" (cdkDropListDropped)="arrived('done')">
+      <div class="example-box" *ngFor="let item of todo" cdkDrag cdkDragEntered (cdkDragEntered)="came(item)">
+        <div class="text-card" *ngIf="item.estado == '3'">
+          {{item.nome}}
+          <button (click)="retornaTarefa(item)">Atualizar</button>
+          <button (click)="deleted(item.id)">Deletar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

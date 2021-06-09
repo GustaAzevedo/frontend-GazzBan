@@ -1,6 +1,6 @@
 .lista-tarefas {
   text-align: center;
-  width: 300px;
+  width: 400px;
   max-width: 100%;
   margin: 0 ;
   padding: 1rem;
@@ -8,8 +8,14 @@
   vertical-align: top;
 }
 
+.categ-cont  {
+  padding-left: 1rem;
+  color: #F7BC00;
+}
+
 .text-card {
-  padding: 2rem;
+  text-align: start;
+  padding: 2rem 0.5rem;
 }
 
 .bh-purple {

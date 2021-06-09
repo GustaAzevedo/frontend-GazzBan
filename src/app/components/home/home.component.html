@@ -30,7 +30,7 @@
       class="example-list" (cdkDropListDropped)="drop($event)" (cdkDropListDropped)="arrived('todo')">
       <div class="example-box" *ngFor="let item of todo" cdkDrag cdkDragEntered (cdkDragEntered)="came(item)">
         <div class="text-card" *ngIf="item.estado == '1'">
-          {{item.nome}}
+          {{item.nome}} <span class=" categ-cont "> {{item.categoria}} </span>
           <button (click)="retornaTarefa(item)">Atualizar</button>
           <button (click)="deleted(item.id)">Deletar</button>
         </div>
@@ -45,7 +45,7 @@
       class="example-list" (cdkDropListDropped)="drop($event)" (cdkDropListDropped)="arrived('doing')">
       <div class="example-box" *ngFor="let item of todo" cdkDrag cdkDragEntered (cdkDragEntered)="came(item)">
         <div class="text-card" *ngIf="item.estado == '2'">
-          {{item.nome}}
+          {{item.nome}} <span class=" categ-cont "> {{item.categoria}} </span>
           <button (click)="retornaTarefa(item)">Atualizar</button>
           <button (click)="deleted(item.id)">Deletar</button>
         </div>
@@ -61,7 +61,7 @@
       class="example-list" (cdkDropListDropped)="drop($event)" (cdkDropListDropped)="arrived('done')">
       <div class="example-box" *ngFor="let item of todo" cdkDrag cdkDragEntered (cdkDragEntered)="came(item)">
         <div class="text-card" *ngIf="item.estado == '3'">
-          {{item.nome}}
+          {{item.nome}} <span class=" categ-cont "> {{item.categoria}} </span>
           <button (click)="retornaTarefa(item)">Atualizar</button>
           <button (click)="deleted(item.id)">Deletar</button>
         </div>

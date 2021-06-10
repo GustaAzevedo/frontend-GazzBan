@@ -14,10 +14,11 @@
       <mat-form-field class="w-100" appearance="fill">
         <mat-label class="w-100">Categoria</mat-label>
         <select matNativeControl required [(ngModel)]="tarefa.categoria">
-          <option value="escola">Time</option>
-          <option value="faculdade">Instituição</option>
-          <option value="trabalho">Campeonato</option>
-          <option value="projeto">Torneios</option>
+          <option value="time">Time</option>
+          <option value="instituição">Instituição</option>
+          <option value="campeonato">Campeonato</option>
+          <option value="torneios">Torneios</option>
+          <option value="projeto">Projeto</option>
         </select>
       </mat-form-field>
       <button *ngIf="isInserir" class="btn-salva-tarefa" (click)="novaTarefa()">Inserir</button>
@@ -26,7 +27,7 @@
   </div>
 
   <div class="lista-tarefas">
-    <h2>To do</h2>
+    <h2 class="title-tarefa">To do</h2>
 
     <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList, doingList]"
       class="example-list" (cdkDropListDropped)="drop($event)" (cdkDropListDropped)="arrived('todo')">
@@ -44,7 +45,7 @@
   </div>
 
   <div class="lista-tarefas">
-    <h2>Doing</h2>
+    <h2 class="title-tarefa">Doing</h2>
 
     <div cdkDropList #doingList="cdkDropList" [cdkDropListData]="doing" [cdkDropListConnectedTo]="[todoList, doneList]"
       class="example-list" (cdkDropListDropped)="drop($event)" (cdkDropListDropped)="arrived('doing')">
@@ -63,7 +64,7 @@
 
 
   <div class="lista-tarefas">
-    <h2>Done</h2>
+    <h2 class="title-tarefa">Done</h2>
 
     <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList, doingList]"
       class="example-list" (cdkDropListDropped)="drop($event)" (cdkDropListDropped)="arrived('done')">

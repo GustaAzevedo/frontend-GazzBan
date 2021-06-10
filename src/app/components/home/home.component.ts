@@ -79,7 +79,6 @@ export class HomeComponent implements OnInit {
       this.tarefas = tarefas
 
       this.todo = this.tarefas;
-      console.log(tarefas);
     })
   }
 
@@ -99,7 +98,6 @@ export class HomeComponent implements OnInit {
   }
 
   came(tarefa: Tarefa) {
-    console.log(tarefa)
     this.tarefa = tarefa;
   }
 
@@ -115,7 +113,6 @@ export class HomeComponent implements OnInit {
   }
 
   arrived(a: string): void {
-    console.log(a)
     switch (a) {
       case "todo": {
         this.tarefa.estado = "1";

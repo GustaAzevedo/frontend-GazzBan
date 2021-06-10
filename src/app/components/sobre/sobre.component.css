@@ -1,0 +1,28 @@
+.bg-yellow {
+  background-color: #F7BC00;
+}
+
+.sobre-container{
+  padding-top: 70px;
+  min-height: calc(100vh - 70px);
+  display: flex;
+
+  flex-direction: row;
+}
+
+.conteudo {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.title-sobre {
+  padding-top: 1rem;
+  font-size: 2rem;
+  color: #731DC4;
+  font-weight: 600;
+}
+
+.text-sobre {
+  font-size: 1rem;
+  font-weight: 500;
+}

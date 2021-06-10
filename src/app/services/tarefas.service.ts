@@ -7,10 +7,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class TarefasService {
   baseUrl = "http://localhost:3001/tarefas";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   listar(): Observable<Tarefa[]> {
     return this.http.get<Tarefa[]>(this.baseUrl).pipe(

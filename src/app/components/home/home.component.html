@@ -1,4 +1,8 @@
-<div class=" container">
+<div class="container">
+
+  <div class="logo-container">
+    <img class="lakers-logo" src="https://i.imgur.com/SPe1xLo.png" alt="Logo Lakers">
+  </div>
 
   <div class="nova-tarefa-card">
     <h2>Nova Tarefa</h2>
@@ -10,17 +14,15 @@
       <mat-form-field class="w-100" appearance="fill">
         <mat-label class="w-100">Categoria</mat-label>
         <select matNativeControl required [(ngModel)]="tarefa.categoria">
-          <option value="escola">Escola</option>
-          <option value="faculdade">Faculdade</option>
-          <option value="trabalho">Trabalho</option>
-          <option value="projeto">Projeto</option>
-          <option value="rotina">Rotina</option>
+          <option value="escola">Time</option>
+          <option value="faculdade">Instituição</option>
+          <option value="trabalho">Campeonato</option>
+          <option value="projeto">Torneios</option>
         </select>
       </mat-form-field>
       <button *ngIf="isInserir" class="btn-salva-tarefa" (click)="novaTarefa()">Inserir</button>
       <button *ngIf="isSalvar" class="btn-salva-tarefa" (click)="atualizarTarefa()">Salvar</button>
     </div>
-
   </div>
 
   <div class="lista-tarefas">
@@ -29,10 +31,13 @@
     <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList, doingList]"
       class="example-list" (cdkDropListDropped)="drop($event)" (cdkDropListDropped)="arrived('todo')">
       <div class="example-box" *ngFor="let item of todo" cdkDrag cdkDragEntered (cdkDragEntered)="came(item)">
-        <div class="text-card" *ngIf="item.estado == '1'">
-          {{item.nome}} <span class=" categ-cont "> {{item.categoria}} </span>
-          <button (click)="retornaTarefa(item)">Atualizar</button>
-          <button (click)="deleted(item.id)">Deletar</button>
+        <div class="example-box__container" *ngIf="item.estado == '1'">
+          <span class="example-box__title">{{item.nome}}</span>
+          <span class="example-box__categ">{{item.categoria}}</span>
+          <div class="example-box__actions">
+            <button (click)="retornaTarefa(item)">Atualizar</button>
+            <button (click)="deleted(item.id)">Deletar</button>
+          </div>
         </div>
       </div>
     </div>
@@ -44,10 +49,13 @@
     <div cdkDropList #doingList="cdkDropList" [cdkDropListData]="doing" [cdkDropListConnectedTo]="[todoList, doneList]"
       class="example-list" (cdkDropListDropped)="drop($event)" (cdkDropListDropped)="arrived('doing')">
       <div class="example-box" *ngFor="let item of todo" cdkDrag cdkDragEntered (cdkDragEntered)="came(item)">
-        <div class="text-card" *ngIf="item.estado == '2'">
-          {{item.nome}} <span class=" categ-cont "> {{item.categoria}} </span>
-          <button (click)="retornaTarefa(item)">Atualizar</button>
-          <button (click)="deleted(item.id)">Deletar</button>
+        <div class="example-box__container" *ngIf="item.estado == '2'">
+          <span class="example-box__title">{{item.nome}}</span>
+          <span class=" example-box__categ "> {{item.categoria}} </span>
+          <div class="example-box__actions">
+            <button (click)="retornaTarefa(item)">Atualizar</button>
+            <button (click)="deleted(item.id)">Deletar</button>
+          </div>
         </div>
       </div>
     </div>
@@ -60,10 +68,13 @@
     <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList, doingList]"
       class="example-list" (cdkDropListDropped)="drop($event)" (cdkDropListDropped)="arrived('done')">
       <div class="example-box" *ngFor="let item of todo" cdkDrag cdkDragEntered (cdkDragEntered)="came(item)">
-        <div class="text-card" *ngIf="item.estado == '3'">
-          {{item.nome}} <span class=" categ-cont "> {{item.categoria}} </span>
-          <button (click)="retornaTarefa(item)">Atualizar</button>
-          <button (click)="deleted(item.id)">Deletar</button>
+        <div class="example-box__container" *ngIf="item.estado == '3'">
+          <span class="example-box__title">{{item.nome}}</span>
+          <span class=" example-box__categ "> {{item.categoria}} </span>
+          <div class="example-box__actions">
+            <button (click)="retornaTarefa(item)">Atualizar</button>
+            <button (click)="deleted(item.id)">Deletar</button>
+          </div>
         </div>
       </div>
     </div>

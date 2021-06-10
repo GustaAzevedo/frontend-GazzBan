@@ -19,11 +19,9 @@ export class HomeComponent implements OnInit {
 
   todo: Tarefa[];
 
-  doing = [
-  ]
+  doing = []
 
-  done = [
-  ];
+  done = [];
 
   constructor(private tarefasService: TarefasService) { }
 
@@ -34,8 +32,8 @@ export class HomeComponent implements OnInit {
 
     this.tarefa = {
       nome: '',
+      estado: '1',
       categoria: '',
-      estado: '1'
     }
   }
 
@@ -95,8 +93,8 @@ export class HomeComponent implements OnInit {
   limparCampos(): void {
     this.tarefa = {
       nome: '',
+      estado: '1',
       categoria: '',
-      estado: '1'
     }
   }
 
@@ -115,8 +113,6 @@ export class HomeComponent implements OnInit {
     this.isSalvar = false;
     this.limparCampos();
   }
-
-
 
   arrived(a: string): void {
     console.log(a)
@@ -149,8 +145,5 @@ export class HomeComponent implements OnInit {
         break;
       }
     }
-
   }
-
-
 }

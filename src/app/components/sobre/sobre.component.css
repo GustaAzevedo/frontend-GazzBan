@@ -10,9 +10,21 @@
   flex-direction: row;
 }
 
+.pt-5 {
+  padding-top: 1rem;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #731DC4;
+}
+
 .conteudo {
+  padding-top: 2rem;
   width: 80%;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .title-sobre {
@@ -24,5 +36,16 @@
 
 .text-sobre {
   font-size: 1rem;
+  font-weight: 500;
+}
+
+.card {
+  background-color: hsla(208, 100%, 97%, 0.63);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.bold {
+  font-size: 1.2rem;
   font-weight: 500;
 }
